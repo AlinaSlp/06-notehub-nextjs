@@ -72,11 +72,21 @@ function NoteForm({ onCancel }: NoteFormProps) {
           <div className={css.formGroup}>
             <label htmlFor="tag">Tag</label>
             <Field id="tag" as="select" name="tag" className={css.select}>
-              <option value="Todo">Todo</option>
-              <option value="Work">Work</option>
-              <option value="Personal">Personal</option>
-              <option value="Meeting">Meeting</option>
-              <option value="Shopping">Shopping</option>
+              <option className={css.dropDownMenu} value="Todo">
+                Todo
+              </option>
+              <option className={css.dropDownMenu} value="Work">
+                Work
+              </option>
+              <option className={css.dropDownMenu} value="Personal">
+                Personal
+              </option>
+              <option className={css.dropDownMenu} value="Meeting">
+                Meeting
+              </option>
+              <option className={css.dropDownMenu} value="Shopping">
+                Shopping
+              </option>
             </Field>
             <ErrorMessage name="tag" component="span" className={css.error} />
           </div>
