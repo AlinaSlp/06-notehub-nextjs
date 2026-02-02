@@ -1,6 +1,6 @@
 import css from './Home.module.css';
 
-function Home() {
+export default function Home() {
   return (
     <main>
       <div className={css.container}>
@@ -17,5 +17,3 @@ function Home() {
     </main>
   );
 }
-
-export default Home;
