@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { useQuery } from '@tanstack/react-query';
+import { useQuery, keepPreviousData } from '@tanstack/react-query';
 import { useDebounce } from 'use-debounce';
 
 import css from './NotesPage.module.css';
@@ -25,6 +25,7 @@ function App() {
   const { data, isLoading, isError } = useQuery({
     queryKey: ['notes', page, debouncedSearch],
     queryFn: () => fetchNotes(page, PER_PAGE, debouncedSearch || undefined),
+    placeholderData: keepPreviousData,
   });
 
   const handleSearchChange = (value: string) => {
